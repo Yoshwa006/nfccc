@@ -29,7 +29,7 @@ public class controller {
     @PostMapping
     public String RegisterItem(@RequestBody Item item){
         service.RegisterItem(item);
-        return "https://localhost:8080/api/items/"+item.getId();
+        return "http://localhost:8080/api/items/"+item.getId();
     }
 
     @PutMapping("/{itemId}/modify")
