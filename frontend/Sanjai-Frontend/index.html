@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFC Bike Rental</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loading-screen">
+    <h1 class="welcome-heading">Welcome</h1>
+    <div class="loader"></div>
+    <p>Loading...</p>
+  </div>
+  <div class="container">
+    <!-- NFC Scan Button -->
+    <div class="nfc-scan-container" id="nfc-scan-container">
+      <button class="nfc-scan-button" id="nfc-scan-button">Tap to Scan NFC</button>
+    </div>
+
+    <!-- Image Slider and Details (Hidden Initially) -->
+    <div class="content-container" id="content-container">
+      <!-- Image Slider -->
+      <div class="slider">
+        <div class="slides">
+          <img src="pexels-alleksana-4271933.jpg" alt="Bike 1" class="slide">
+          <img src="jayl.jpg" alt="Bike 2" class="slide">
+          <img src="floppy.png" alt="Bike 3" class="slide">
+        </div>
+        <button class="slider-button prev" onclick="prevSlide()">&#10094;</button>
+        <button class="slider-button next" onclick="nextSlide()">&#10095;</button>
+      </div>
+
+      <!-- Bike Details Card -->
+      <div class="details-card">
+        <h2 id="bike-name">Bike Name</h2>
+        <div class="bike-info">
+          <p><strong>Model:</strong> <span id="bike-model">XYZ-123</span></p>
+          <p><strong>Rent per Hour:</strong> <span id="bike-rent">$10</span></p>
+          <p><strong>Availability:</strong> <span id="bike-availability">Available</span></p>
+        </div>
+        <div class="owner-details">
+          <h3>Owner Details</h3>
+          <div class="owner-info">
+            <span class="owner-icon">👤</span>
+            <p id="owner-name">John Doe</p>
+          </div>
+          <div class="owner-info">
+            <span class="owner-icon">📞</span>
+            <p id="owner-contact">+123 456 7890</p>
+          </div>
+        </div>
+        <button class="rent-button">Rent Now</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

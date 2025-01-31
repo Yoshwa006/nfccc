@@ -1,0 +1,297 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .container {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Loading Screen */
+  .loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+  }
+  
+  .welcome-heading {
+    font-size: 36px;
+    color: #ff6f61;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease;
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #ff6f61;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .loading-screen p {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #fff;
+  }
+  /* NFC Scan Button */
+  .nfc-scan-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .nfc-scan-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(255, 111, 97, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .nfc-scan-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 30px rgba(255, 111, 97, 0.5);
+  }
+  
+  /* Content Container (Hidden Initially) */
+  .content-container {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  
+  /* Image Slider */
+  .slider {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .slider:hover {
+    transform: scale(1.05);
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    min-width: 100%;
+    border-radius: 20px;
+    transition: opacity 0.5s ease;
+  }
+  
+  .slide:hover {
+    opacity: 0.9;
+  }
+  
+  .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: background 0.3s ease;
+  }
+  
+  .slider-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+  
+  /* Bike Details Card */
+  .details-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: left;
+    animation: fadeIn 1s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .details-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .details-card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ff6f61;
+    transition: color 0.3s ease;
+  }
+  
+  .details-card h2:hover {
+    color: #e65a50;
+  }
+  
+  .bike-info {
+    margin-bottom: 20px;
+  }
+  
+  .bike-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #ddd;
+    transition: color 0.3s ease;
+  }
+  
+  .bike-info p:hover {
+    color: #fff;
+  }
+  
+  .owner-details {
+    margin-top: 20px;
+  }
+  
+  .owner-details h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ff6f61;
+    transition: color 0.3s ease;
+  }
+  
+  .owner-details h3:hover {
+    color: #e65a50;
+  }
+  
+  .owner-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .owner-icon {
+    font-size: 20px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .owner-icon:hover {
+    transform: scale(1.2);
+  }
+  
+  .rent-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    background: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .rent-button:hover {
+    background: #e65a50;
+    transform: scale(1.05);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .nfc-scan-button {
+      font-size: 16px;
+      padding: 12px 24px;
+    }
+  
+    .slider {
+      max-width: 300px;
+    }
+  
+    .details-card {
+      padding: 15px;
+    }
+  
+    .details-card h2 {
+      font-size: 20px;
+    }
+  
+    .bike-info p {
+      font-size: 14px;
+    }
+  
+    .owner-details h3 {
+      font-size: 16px;
+    }
+  }
